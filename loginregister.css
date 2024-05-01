@@ -1,0 +1,258 @@
+/* buat bikin antara text atau elemen dk ada jaraknya */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, input{
+    font-family: "Poppins", sans-serif;
+}
+/* buat ngatur class container */
+.container{
+    position: relative;
+    width: 100%;
+    background: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+/* buat bikin bentuk yang ada di kiri dan dikanan */
+.container::before{
+    content: "";
+    position: absolute;
+    height: 2000px;
+    width: 2000px;
+    top: -10%;
+    right: 48%;
+    background-image: linear-gradient(-45deg, #20dbc2, #00bfa6 100%);
+    transform: translateY(-50%);
+    border-radius: 50%;
+    z-index: 6;
+    transition: 1.8s ease-in-out;
+}
+/* buat ngatur class forms container */
+.forms-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+/* buat form jadi ketengah dan elemennya lainnya */
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    padding: 0 5rem;
+}
+/* buat ngedit Yg tulisan sign in */
+.title{
+    font-size: 2.2em;
+    color: #444;
+    margin-bottom: 10px;
+}
+/* buat ngatur input field */
+.input-field{
+    max-width: 300px;
+    width: 100%;
+    height: 45px;
+    background: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0 0.4rem;
+    position: relative;
+}
+/* buat ngatur icon di input field */
+.input-field i{
+    text-align: center;
+    line-height: 45px;
+    color: #acacac;
+    font-size: 1.1rem;
+}
+/* buat ngatur placeholder di input field */
+.input-field input{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #444;
+}
+/* buat ngatur ketebalan icon dan text place holder */
+.input-field input:placeholder-shown{
+    color: #aaa;
+    font-weight: 500;
+}
+/* buat ngedit button submit */
+.btn{
+    width: 150px;
+    height: 49px;
+    outline: none;
+    border: none;
+    border-radius: 48px;
+    background: green;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+/* buat kasih efek saat pointer diarahkan ke button */
+.btn:hover{
+    background: greenyellow;
+}
+/* ngasih jarak atas */
+.social-text{
+    padding: 0.7rem 0;
+}
+/* buat ngatur ikon sosial media */
+.social-media{
+    display: flex;
+    justify-content: center;
+}
+.social-icon{
+    /* ngasih jarak antara ikon */
+    height: 46px;
+    width: 46px;
+    /* buat ngasih border bentuk kotak */
+    border: 1px solid #333;
+    /* bikin border ikon yg tadinya mepet jadi ada jarak */
+    margin: 0 0.45rem;
+    display: flex;
+    justify-content: center;
+    /* bikin ikon yg ada di border jadi ke tengah */
+    align-items: center;
+    /* buat ngilangin underlined */
+    text-decoration: none;
+    color: #333;
+    /* buat gedein icons */
+    font-size: 1.3rem;
+    /* buat jadiin ikon bentuk bulet */
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+.social-icon:hover{
+    color: aqua;
+    border-color: aquamarine;
+}
+.signin-signup{
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    /* buat ngatur mana yg di depan atau blkg */
+    z-index: 5;
+}
+/* z-index ini berfungsi untuk mengatur elemen mana yang berada di depan, dan elemen mana yang berada di belakang. */
+form.sign-in-form{
+    z-index: 2;
+}
+/* buat ngilangin yg sign up */
+form.sign-up-form{
+    z-index: 1;
+    opacity: 0;
+}
+/* buat ngatur besar image */
+.image{
+    width: 100%;
+    transition: 0.9s 0.6s ease-in-out;
+
+}
+/* buat ngatur panels container */
+.panels-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    /* buat bikin template 2 */
+    grid-template-columns: repeat(2, 1fr);
+}
+/* buat bikin yg ada di panel ke tengah */
+.panel{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+z-index: 7;
+}
+/* buat  image yang sign up jadi pas di kiri */
+.left-panel{
+    padding: 3rem 17% 2rem 15%;
+}
+/* buat  image yang sign in jadi pas di kanan */
+.right-panel{
+    padding: 3rem 12% 2rem 17%;
+
+}
+.panels .content{
+    color: #f0f0f0;
+    transition: 0.9s 0.6s ease-in-out;
+}
+.panel h3{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+/* buat ngasih jarak antara h3 dan paragraf */
+.panel p{
+    font-size: 0.95rem;
+    padding: 0.7rem 0;
+}
+/* buat nagtur bentuk button sign up dan warnanya */
+.btn.transparant{
+    margin: 0;
+    background: none;
+    border: 2px solid white;
+    width: 130px;
+    height: 40px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+/* ?buat gambar yang dikana jadi ilang */
+.right-panel .content,
+.right-panel .image{
+    transform: translateX(800px);
+}
+/* animasi */
+.container.sign-up-mode::before{
+    transform: translate(100%, -50%);
+    right: 52%;
+}
+/* buat ngantur gambar ada di dalam elemen hijau */
+.container.sign-up-mode .left-panel .image,
+.container.sign-up-mode .left-panel .content{
+    transform: translate(-800px);
+}
+.container.sign-up-mode .right-panel .image,
+.container.sign-up-mode .right-panel .content{
+    transform: translate(0%);
+}
+.container.sign-up-mode .left-panel {
+    pointer-events: none;
+}
+.container.sign-up-mode .right-panel{
+    pointer-events: all;
+} 
+/* BUAT MUCULIN FORM SIGN IN */
+.container.sign-up-mode .signin-signup{
+    left: 25%;
+}
+.container.sign-up-mode form.sign-in-form {
+    z-index: 1;
+    opacity: 0;
+}
+.container.sign-up-mode form.sign-up-form {
+    z-index: 2;
+    opacity: 1;
+}

@@ -1,0 +1,433 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+/*biar setiap ganti page yg ada di navbar jadi smooth*/
+html{
+    scroll-behavior: smooth;
+}
+/*buat warna background*/
+body{
+    background: #080808;
+    color: #fff;
+
+}
+/*buat menyetel gambar background, posisi dan sizenya*/
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/fotolatar.JPG);
+    background-size: cover;
+    background-position: center;
+}
+/*buat kasih jarak atas dan bawah dan kanan kiri yg px buat atas bawah yg persen buat kanan kiri*/
+.container{
+    padding: 10px 10%;
+}
+/*untuk misahin logo nama dan home dll ke kanan*/
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/*buat menyetel ukuran logo dari besar jadi lebih kecil*/
+.logo{
+    width: 140px;
+}
+
+/*buat jadi navbar diatas jadi rapih, menyamping dan ada jarak dan 
+list style buat ilangin titik disamping tulisan*/
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+/*buat menyetel warna text dan menghilangkan underlined*/
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+/*buat efek underlined warna merah saat kursor dipencet*/
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+/*buat setting panjang underlined warna merah*/
+nav ul li a:hover::after{
+    width: 100%;
+}
+/*buat menyetel jarak antara logo dari paragraf dan size tulisannya*/
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+/*buat menyetel jarak antara tulisan software enggineer sama namaa*/
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+/*buat warnain salah satu tulisan jadi warna merah*/
+.header-text h1 span{
+    color: #ff004f
+}
+                                        /*bagian about*/
+/*buat warnain tulisan dan kasih jarak antara header dan about*/                                        
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+/*buat tulisan yg tadinya di bawah gambar skrg ke kanan gambar di atas*/
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/*buat ngatur sebesar apa gambar kita*/
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 5%;
+}
+/*buat ngatur jarak antara tulisan dan gambar*/
+.about-col-2{
+    flex-basis: 60%;
+}
+/*buat ngatur tulisan About Me*/
+.sub-tittle{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+/*buat ngatur yg tadi tulisanya kebawah jadi kesamping*/
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+/*buat ngatur tulisan kaya di navbar berjarak*/
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+/*buat ngasih efek underlined warna merah di tulisan*/
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+/*buat ngatur panjang underlined warna merah*/
+.tab-links.active-link::after{
+    width: 50%;
+}
+/*buat ngatur Text jarak atas bawah dan ngilangin titik di samping tulisan*/
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+/*buat ngasih warna di tulisan merah dan ukurannya*/
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
+}
+/*buat ngilangin tulisan yg ada di skils biar gk keluar semua*/
+.tab-contents{
+    display: none;
+}
+/*buat ngeluarin tulisan yg diinginkan di skills saat dipencet*/
+.tab-contents.active-tab{
+    display: block;
+}
+/*-----------------services-------------------------------- */
+#services{
+    padding: 30px 0;
+}
+/*buat bikin 3 template yg sama di my services dan dikasih jaraknya*/
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+/*buat bikin bentuk kotak di service list dan transition buat ngatur mucul brp lama efek di kotaknya*/
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
+}
+/*buat besarin ukuran ikon yg ada di service list dan ngasih jarak bawah dari tulisan*/
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+/*buat besarin Teks di service list khusus yg h2 sama mengatur ketebalan text */
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+/*buat ngatur yg tulisan learn more*/
+.services-list div  a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+/*buat klik di kotak my service ada efek timbul warna merah nyambung yg ke .service-list div*/
+.services-list div:hover{
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+/*---------------------------------Portofolio--------------------------*/
+/*buat ngasih jarak antara my services dan my portofolio*/
+#portofolio{
+    padding: 50px 0;
+}
+/*buat bikin gambar jadi berderet ke samping dan kasih jarak dari atas*/
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+/*buat ngatur biar setiap gambar tidak nempel dan kasih jarak*/
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+/*buat bikin img jadi di tengah gk kepotong gambarnya dan kasih efek zoom*/
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+/*buat bikin img dikotak ada warna merah buat naro text jadi ada di dalam gambar yg tadinya dibawah
+dan transition height buat efek kalo kursor diarahkan ke kotak dia ada efek warna merah ke atas*/
+.layer{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+/*buat ngatur ketebalan teks dan ngasih jarak paragraf dari bottom*/
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+/*buat ngatur tombol link ada background putih bulet*/
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+/*buat bikin efek nge zoom di gambar my portofolio nyamung sama yg .work img yg transition*/
+.work:hover img{
+    transform: scale(1.1);
+}
+/*buat munculin warna merah setelah kursor diarahkan sebelum ada ini merahnya gk ada di gambar nyambung ke yg .layer yg image*/
+.work:hover .layer{
+    height: 100%;
+}
+/*buat bikin edit button see more*/
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+/*buat efek merah saat tombol button dipencet nyambung sama transition di .btn*/
+.btn:hover{
+    background: #ff004f;
+}
+/*---------------------------------CONTACT--------------------------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+/*buat ngasih jarak dari teks diatas */
+.contact-left p{
+    margin-top: 30px;
+}
+/*buat edit gambar email sam no hp */
+.contact-left p i{
+    color: #ff004f;
+    margin-right: 15px;
+    font-size: 25px;
+}
+/*buat ngasih jarak dari gambar diatas */
+.social-icons{
+    margin-top: 30px;
+}
+/*buat ngedit logo2 sosial media kasih transition*/
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+/*buat ngasih efek di logo2 sosmed*/
+.social-icons a:hover{
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+/*buat ngedit button submit dan download cv*/
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right{
+    width: 100%;
+}
+/*buat ngedit form biar jadi baguss*/
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+/*buat ngedit button submit*/
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+/*buat ngedit tulisan copyright*/
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+.copyright i{
+    color: #ff004f;
+}
+/*-----------------css for small screnn-------------------------------- */
+/*buat ngedit logo silang sama bar 3 jadi ilang*/
+nav .fa-solid{
+    display: none
+}
+/*buat ngedit navbar sama gambar jadi responsive*/
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(images/fotolatarhp.JPG);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    /*buat ngedit ukuran ikon*/
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    /*buat bikin navbar jadi responsive bisa kebuka di hp di pencet garis 3 keluar navbar*/
+    nav ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    /*buat ngedit ikon silang yg tadi dibawah jadi keatas dan bisa yg tadinya panah disilang jadi ada kursor bentuk nunjuk ke silangnya*/
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    /*buat responsive yg about me*/
+    .sub-tittle{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+     /*buat contact*/
+    .contact-left, .contact-right{
+      flex-basis: 100%;  
+    }
+}
+/* buat ngedit  tulisan hello dibawah submit */
+#msg{
+    color: #61b752;
+    margin-top: -30px;
+    display: block;
+}
